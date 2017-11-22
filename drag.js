@@ -5,5 +5,9 @@ function drag(id){
     obj.onmousedown =function(e){
         disX=e.pageX-obj.offsetLeft;
         disY=e.pageY-obj.offsetTop;
+        document.onmousedown=function(e){
+            obj.style.left=e.clientX-disX+'px';
+            obj.style.top=e.clientY-disY+'px';
+        }
     };
 }
